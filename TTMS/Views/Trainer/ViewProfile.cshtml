@@ -1,0 +1,22 @@
+﻿
+@model TMS.Models.Trainer
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2 class="form-group">View Profile</h2>
+@Html.ActionLink("Back", "Index", "Trainer", null, new { @class = "btn btn-primary" })
+
+
+
+<ul class=" list-group-flush" style="margin-top:10px">
+    <li class=" list-group-item">ID:@Model.Id</li>
+    <li class=" list-group-item">Full Name: @Model.FullName</li>
+    <li class=" list-group-item">Birth Of Date: @Model.BirthOfDate</li>
+    <li class=" list-group-item">Address: @Model.Address</li>
+    <li class=" list-group-item">Phone Number: @Model.PhoneNumber</li>
+    <li class=" list-group-item">Email: @Model.Email</li>
+    <li class=" list-group-item">Position: @Model.Roles</li>
+    <li class=" list-group-item">Course: @Model.Course</li>
+</ul>

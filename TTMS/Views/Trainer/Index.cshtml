@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<TMS.Models.Trainer>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>TRAINER MANAGEMENT</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Trainer #</th>
+
+
+            <th>Full Name</th>
+            <th>Birth of date</th>
+            <th>Address</th>
+            <th>Course</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr style="text-align: center; vertical-align: middle">
+
+                <td>@item.Id</td>
+                <td>@item.FullName</td>
+                <td>@item.BirthOfDate</td>
+                <td>@item.Address</td>
+                <td>@item.Course</td>
+                <td>
+                    @Html.ActionLink("Profile", "ViewProfile", "Trainer", new { id = item.Id }, new { @class = "btn btn-primary" })
+
+                    @Html.ActionLink("Update", "Edit", "Trainer", new { id = item.Id }, new { @class = "btn btn-primary" })
+
+                    @Html.ActionLink("View Course", "ViewCourse", "Trainer", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+                    @Html.ActionLink("Change Password", "ChangePassword", "Home", new { @class = "btn btn-default" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
